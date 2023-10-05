@@ -8,6 +8,8 @@ on:
 env:
   REGISTRY: ghcr.io
   PACKAGE: exodus/sops-age
+  SOPS_VERSION: v3.8.0
+  AGE_VERSION: v1.1.1
 
 jobs:
   build:
@@ -37,6 +39,9 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
+          build-args: |
+            SOPS_VERSION=${{ env.SOPS_VERSION }}
+            SOPS_VERSION=${{ env.SOPS_VERSION }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha,scope=${{ env.PACKAGE }}
