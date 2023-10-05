@@ -25,6 +25,8 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: ${{ env.REGISTRY }}/${{ env.PACKAGE }}
+          labels: |
+            org.opencontainers.image.description="sops: ${SOPS_VERSION} age: ${AGE_VERSION}"
           tags: |
             type=ref,event=branch
             type=semver,pattern={{version}}
