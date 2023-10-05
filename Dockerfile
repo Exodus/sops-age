@@ -1,5 +1,5 @@
 #syntax=docker/dockerfile:1
-FROM ubuntu:22.04 as sops-age
+FROM ubuntu:23.10 as sops-age
 
 # Github release variables.
 # sops is distributed in it's executable binary.
