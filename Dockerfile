@@ -9,6 +9,8 @@ ARG SOPS_ARCH=linux.amd64
 ARG AGE_VERSION=v1.1.1
 ARG AGE_ARCH=linux-amd64
 
+LABEL org.opencontainers.image.description="sops: ${SOPS_VERSION} age: ${AGE_VERSION}"
+
 WORKDIR /app
 
 RUN apt update && apt install -y curl
