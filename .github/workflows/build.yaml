@@ -46,5 +46,6 @@ jobs:
             SOPS_VERSION=${{ env.SOPS_VERSION }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          outputs: "type=image,annotation-index.org.opencontainers.image.description=sops: ${{env.SOPS_VERSION}} age: ${{env.AGE_VERSION}}"
           cache-from: type=gha,scope=${{ env.PACKAGE }}
           cache-to: type=gha,scope=${{ env.PACKAGE }}
